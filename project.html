@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        nav{
+            border: 2px solid black;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+        body{
+            background-color:lightyellow;
+        }
+        img{
+            width: 800px;
+            height: 400px;
+            margin-left: 30px;
+            margin-top: 20px;
+            margin-right: 20px;
+        }
+        p{
+            font-size: 40px;
+        }
+        #image1{
+            display: flex;
+            align-items: center;
+        }
+        #image2{
+            display: flex;
+            align-items: center;
+        }
+        #image3{
+            display: flex;
+            align-items: center;
+        }
+        #image4{
+            display: flex;
+            align-items: center;
+        }
+        #image5{
+            display: flex;
+            align-items: center;
+        }
+        #footer {
+            background-color:bisque;
+            border-radius: 30px;
+            width: 1000px;
+        }
+        #footer2 {
+            background-color:bisque;
+            border-radius: 30px;
+            width: 300px;
+        }
+        #footer_ {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            white-space: nowrap;
+            margin-left: 70px;
+}
+
+        .image-container:hover .overlay {
+            opacity: 1;
+        }
+        .attractions{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .overlay1{
+            position: absolute;
+            bottom: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            white-space: nowrap;
+            margin-left: 90px;
+        }
+        .overlay2{
+           position: absolute;
+            bottom: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            white-space: nowrap;
+            margin-left: 95px; 
+        }
+        .overlay3{
+            position: relative;
+            bottom: 60px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 9px 2px;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: center;
+            white-space: nowrap;
+            margin-left: 50px; 
+            margin-right: 40px;
+            object-fit: cover;
+        }
+        .overlay4{
+           position: absolute;
+            bottom: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            white-space: nowrap;
+            margin-left: 100px; 
+        }
+        .overlay5{
+            position: absolute;
+            bottom: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            white-space: nowrap;
+            margin-left: 80px; 
+        }
+        .overlay6{
+            position: absolute;
+            bottom: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            white-space: nowrap;
+            margin-left: 130px; 
+        }
+        .overlay7{
+            position: absolute;
+            bottom: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 17px;
+            text-align: center;
+            white-space: nowrap;
+            margin-left: 55px; 
+        }
+        .overlay8{
+            position: absolute;
+            bottom: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 15px;
+            text-align: center;
+            white-space: nowrap;
+            margin-left: 45px; 
+        }
+        .form1{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 20px;
+        }
+        #button1{
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+    </style>
+</head>
+<body>
+    <nav style="background-color:lightblue; padding: 15px; text-align: center;">
+        <a href="#attractions" style="color:darkblue; margin: 20px; text-decoration: none; font-size: 20px;">Attractions</a>
+        <a href="#food" style="color: darkblue; margin: 20px; text-decoration: none; font-size: 20px;">Food</a>
+        <a href="#hotels" style="color: darkblue; margin: 20px; text-decoration: none; font-size: 20px;">Hotels</a>
+        <a href="#restaraunts" style="color: darkblue; margin: 20px; text-decoration: none; font-size: 20px;">Restaraunts</a>
+    </nav>
+    <h1 style="text-align: center; font-size:70px; color:darkblue; line-height: 0px;">EXPLORE BANGALORE</h1>
+    <h2 style="text-align: center;font-size: 30px; line-height: 0px; color: brown;">The city where code, coffee and culture connect.</h2>
+    <p style="text-align: center;font-size: 30px; line-height: 0px; color:black; font-style: italic;">Explore Bangalore on a budget — experience more, spend less!</p>
+    <br>
+    <div id="image1">
+        <img style="border-radius: 20px;"  src="https://shathayuretreat.com/wp-content/uploads/2021/10/01.Bangalore-Silicon-Valley-of-India-780x340.jpg.webp" alt="THE BANGALORE">
+         <p>Bengaluru, the capital of Karnataka in South India, is a city where tradition meets modernity. Known as the “Silicon Valley of India,” it offers grand palaces 🏰, lush gardens 🌳, innovative tech hubs 💻 and a vibrant cultural scene 🕉️.</p>
+    </div>
+    <div id="image2">
+        <p>The city boasts stunning landmarks such as Lalbagh Botanical Garden 🌺, Cubbon Park 🌳 and Bangalore Palace 🏰. Art lovers can explore over 30 museums and galleries 🖼️🔬, while nature enthusiasts enjoy Bannerghatta National Park 🐅 and Nandi Hills 🌄.</p>
+        <img style="border-radius: 20px;" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/32/90/26/lalbagh-bengaluru-once.jpg?w=600&h=-1&s=1" alt="GARDEN">
+    </div>
+    <div id="image3">
+        <img style="border-radius: 20px;" src="https://media.istockphoto.com/id/492629809/photo/king-palace.jpg?s=612x612&w=0&k=20&c=0G2JrGCrjZ9GjzAGNQ2JMTVSdbne1ubnDXrHfw-pocg=" alt="CULTURE">
+        <p>Bengaluru's culture blends traditional South Indian art 🎨 and modern lifestyle 🌇. The city celebrates festivals like Deepavali 🪔, Navratri 💃, Ugadi 🎉, and Karaga Shaktyotsava 🔱, reflecting its vibrant cultural diversity.</p>
+    </div>
+    <div id="image4">
+        <p>Food lovers can enjoy Bengaluru's iconic dishes like masala dosa and Bisi Bele Bath 🍛. The city also boasts trendy cafés ☕ and lively street food markets 🌮, offering a taste of both traditional and modern cuisine.</p>
+        <img style="border-radius: 20px;" src="https://b.zmtcdn.com/data/pictures/8/21592908/3d773d5a761a3fcdf1f6d8643bf13f07_featured_v2.jpg" alt="CAFE">
+    </div>
+    <div id="image5">
+        <img style="border-radius: 20px;" src="https://cdn.table.media/img/assets/uploads/bengaluru.jpg?w=1200&h=630&fit=crop&s=0d1bd993cfa37be9a0e7c12ecef957e3" alt="TECH">
+    <p>Bengaluru is India's tech hub 💻🚀, home to countless startups and IT parks. Yet the city keeps its charm with ancient temples 🕉️, bustling markets 🛍️, and a lifestyle that balances tradition and modernity.</p>
+    </div>
+    
+    <h6 id="attractions" style="color: brown; opacity: 50%; font-size: 50px; text-align: center; line-height: 0px; font-family: Arial, Helvetica, sans-serif;">Explore</h6>
+<h1 style="font-size: 150px; text-align: center; line-height: 0px; font-family: Arial, Helvetica, sans-serif; color: aqua; font-weight: bold; opacity: 45%; -webkit-text-stroke: 5px brown;">ATTRACTIONS</h1>
+
+<div class="attractions-section" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 20px;">
+
+    <a href="https://karnatakatourism.org/tour-item/lalbagh-botanical-garden/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://www.rentomojo.com/blog/wp-content/uploads/2024/06/featured_lalbagh-botanical-garden-660x660.jpg" alt="Lalbagh Botanical Garden" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Lalbagh Botanical Garden</h3>
+        </span>
+    </a>
+
+    <a href="https://www.iskconbangalore.org/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://temple.yatradham.org/public/Product/temple/temple_9WTVeIBq_202507021648090.webp" alt="ISKCON Temple" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">ISKCON Temple</h3>
+        </span>
+    </a>
+
+    <a href="https://srichamarajendrapark.com/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://cdn.corner.inc/place-photo/AcJnMuGjBkoBu-caPlOuWoYrhGi3R-HOPDJRNkIlEJMWfPPjyQ8JrRLzLeHgMDZLldXe_FMZdzBZMQr0-TsELSt45kVIxbP10DLonXL438nVwe09nnMuCR7jqUKlS5WEqGzr8FcPzfrpnhm_5RFiT7HXaBlOSpbu8fpDB_aOjhMwKW-F5eHO.jpeg" alt="Cubbon Park" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Cubbon Park</h3>
+        </span>
+    </a>
+
+    <a href="https://www.phoenixmarketcity.com/bangalore" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://img.staticmb.com/mbcontent/images/crop/uploads/2023/10/Phoenix_Marketcity_Mumbai_0_1200.jpg.webp" alt="Phoenix Market City" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Phoenix Market City</h3>
+        </span>
+    </a>
+
+    <a href="https://vismuseum.gov.in/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://www.shutterstock.com/shutterstock/photos/2354148807/display_1500/stock-photo-the-visvesvaraya-industrial-and-technological-museum-at-the-electronic-city-in-the-city-of-2354148807.jpg" alt="Visvesvaraya Museum" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Visvesvaraya Museum</h3>
+        </span>
+    </a>
+
+    <a href="https://theaquariumparadise.com/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdgq_FI_KQjM54wAtzbSpZfcKfo0Gu1FmNiViGdCSSc1L0b-7FDrsbFjWaLNZtEhOouXZHeI0DkGLA8NH-j3RpjTx8483pR2OXnlvKUuCYA1NEEzL2TeTGGDN-BjzQha_bFABMMiw?key=erHpJa2Xio0WpWZUbrPPnQ" alt="Aquarium Paradise" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Aquarium Paradise</h3>
+        </span>
+    </a>
+
+    <a href="https://www.tripadvisor.in/Attraction_Review-g297628-d1219275-Reviews-Shivoham_Shiva_Temple-Bengaluru_Bangalore_District_Karnataka.html" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://scontent.fbho3-5.fna.fbcdn.net/v/t1.6435-9/154527770_2771229769760998_3090917768366895891_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=lsKAeIrlrUwQ7kNvwFKyREk&_nc_oc=AdnepdS4lSyd3ha5A-utgdeU-Pkrq-JgPHPvXaKtm6Df-MSlk_9QDSDWBR6gzoS3hJ4&_nc_zt=23&_nc_ht=scontent.fbho3-5.fna&_nc_gid=xkiW5a877upLo6UWzsAkCQ&oh=00_AfeIebFqL2l2HRfoThqggT5wY02p_G4jkmucZ-SnI6MO0w&oe=691F2560" alt="Shivoham Shiva Temple" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Shivoham Shiva Temple</h3>
+        </span>
+    </a>
+
+    <a href="https://www.wonderla.com/bengaluru" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://karnatakatourism.org/wp-content/uploads/2020/06/WOnderla-Portrait.jpg" alt="Wonderla Waterpark" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Wonderla Waterpark</h3>
+        </span>
+    </a>
+
+    <a href="https://playarena.in/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://playarena.in/wp-content/uploads/2023/12/bowling_4.jpg" alt="Play Arena" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Play Arena</h3>
+        </span>
+    </a>
+
+    <a href="https://bannerughattabiopark.org/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/22/f07f1cba14d588dd5aa6e1a6f0e5421b_1000x1000.jpg" alt="Bannerughatta Biological Park" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Bannerughatta Biological Park</h3>
+        </span>
+    </a>
+
+    <a href="https://karnatakatourism.org/tour-item/nandi-hills/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://jollymiles.com/wp-content/uploads/2020/11/84b92-img-20151024-wa0029.jpg" alt="Nandi Hills" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Nandi Hills</h3>
+        </span>
+    </a>
+
+</div>
+
+
+
+
+
+    <h6 id="food" style="color: brown; opacity: 50%; font-size: 50px; text-align: center; line-height: 0px; font-family:Arial, Helvetica, sans-serif;">Explore</h6>
+<h1 style="font-size: 150px; text-align: center; line-height: 0px; font-family:Arial, Helvetica, sans-serif; color:aqua; font-weight: bold; opacity:45% ; -webkit-text-stroke: 5px brown;">FOOD</h1>
+
+<div class="food-section" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 20px;">
+    
+    <a href="https://www.zomato.com/bangalore/brahmins-coffee-bar-basavanagudi" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://assets.simplotel.com/simplotel/image/upload/x_0,y_60,w_1280,h_719,r_0,c_crop,q_80,fl_progressive/w_910,f_auto,c_fit/evoma---business-hotel-k-r-puram-bangalore/Evoma_hotel_blog_bmttks" alt="Idli Vada" style="height:400px; width:300px; border-radius: 10%; border: 8px solid darkgoldenrod; object-fit: cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius: 0 0 10% 10%;">Idli Vada</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/bidadi-thatte-idly-hotel-basavanagudi-bangalore" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://images.lifestyleasia.com/wp-content/uploads/sites/6/2025/01/13151944/best-thatte-idli-in-bangalore-breakfast-cafes.jpg" alt="Thatte Idli" style="height:400px; width:300px; border-radius: 10%; border: 8px solid darkgoldenrod; object-fit: cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius: 0 0 10% 10%;">Thatte Idli</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/mavalli-tiffin-room-mtr-basavanagudi-bangalore" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://www.kuchpakrahahai.in/wp-content/uploads/2024/06/Instant-semiya-idli.jpg" alt="Rava Idli" style="height:400px; width:300px; border-radius: 10%; border: 8px solid darkgoldenrod; object-fit: cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius: 0 0 10% 10%;">Rava Idli</h3>
+        </span>
+    </a>
+
+    <a href="https://centraltiffinroom.com/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://img.freepik.com/premium-photo/butter-masala-dosa-south-indian-traditional-popular-crepe-with-filling-mixture-mashed-potatoes-fried-onions-with-butter-topping-served-with-chutney-sambar-selective-focus_726363-230.jpg" alt="Dosa" style="height:400px; width:300px; border-radius: 10%; border: 8px solid darkgoldenrod; object-fit: cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius: 0 0 10% 10%;">Masala Dosa</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/hotel-dwarka-basavanagudi" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://static.wixstatic.com/media/f257ed_392ec840174d415094e8d796f4278890~mv2.jpg/v1/fill/w_568,h_758,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/f257ed_392ec840174d415094e8d796f4278890~mv2.jpg" alt="Khali Dosa" style="height:400px; width:300px; border-radius: 10%; border: 8px solid darkgoldenrod; object-fit: cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius: 0 0 10% 10%;">Khali Dosa</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/mudde-madappa-mess-majestic" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://i.pinimg.com/564x/b9/04/f9/b904f9619fac9c4dc5614758600b510f.jpg" alt="Ragi Mudde" style="height:400px; width:300px; border-radius: 10%; border: 8px solid darkgoldenrod; object-fit: cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius: 0 0 10% 10%;">Ragi Mudde</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/puliyogare-point-basavanagudi" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://vegrecipesofkarnataka.com/assets/img/puliyogare/karnataka-puliyogare-recipe.jpg" alt="Puliyogare" style="height:400px; width:300px; border-radius: 10%; border: 8px solid darkgoldenrod; object-fit: cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius: 0 0 10% 10%;">Puliyogare</h3>
+        </span>
+    </a>
+
+    <a href="https://hallimane.com/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Bisi_Bele_Bath_%28Bisibelebath%29.JPG/1200px-Bisi_Bele_Bath_%28Bisibelebath%29.JPG" alt="Bisi Bele Bath" style="height:400px; width:300px; border-radius: 10%; border: 8px solid darkgoldenrod; object-fit: cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius: 0 0 10% 10%;">Bisi Bele Bath</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/karnataka-bhel-house-basavanagudi" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://rakskitchen.net/wp-content/uploads/2019/05/masala-puri-recipe.jpg" alt="Masala Puri" style="height:400px; width:300px; border-radius: 10%; border: 8px solid darkgoldenrod; object-fit: cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius: 0 0 10% 10%;">Masala Puri</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/holige-mane-1-malleshwaram" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgETjfPDWIMQcvL8X84-ef7_e-7-nUWtj-KQ2sf3ZUyyLGt-3K5izahl_O4qmMtQTJtSbQRBxb-MTll5E0IXWKEWyNPCVgZiuv7QctkndwHlkp5wabfYeR288aSLJZUt5hib67xkfIg56Ze/s1600/Bele+Holige.JPG" alt="Holige" style="height:400px; width:300px; border-radius: 10%; border: 8px solid darkgoldenrod; object-fit: cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius: 0 0 10% 10%;">Holige</h3>
+        </span>
+    </a>
+
+</div>
+
+
+
+    <h6 id="hotels" style="color: brown; opacity: 50%; font-size: 50px; text-align: center; line-height: 0px; font-family:Arial, Helvetica, sans-serif;">Explore</h6>
+<h1 style="font-size: 150px; text-align: center; line-height: 0px; font-family:Arial, Helvetica, sans-serif; color:aqua; font-weight: bold; opacity:45%; -webkit-text-stroke: 5px brown;">HOTELS</h1>
+
+<div class="hotels-section" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 20px;">
+
+    <a href="https://www.ihg.com/holidayinn/hotels/gb/en/bangalore/blrex/hoteldetail" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://digital.ihg.com/is/image/ihg/holiday-inn-bengaluru-5471100716-4x3" alt="Holiday Inn by IHG" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">Holiday Inn by IHG</h3>
+        </span>
+    </a>
+
+    <a href="https://www.tripadvisor.in/Hotel_Review-g297628-d24849234-Reviews-Kingston_Hotel-Bengaluru.html" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://kingston.indiabangalorehotels.com/data/Pictures/OriginalPhoto/15311/1531102/1531102735/picture-bangalore-kingston-hotel-1.JPEG" alt="Kingston Hotel" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">Kingston Hotel</h3>
+        </span>
+    </a>
+
+    <a href="https://www.guestreservations.com/palm-meadows-club/booking" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/02/e6/1b/74/palm-meadows-club.jpg?w=700&h=-1&s=1" alt="Palm Meadows Resort" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">Palm Meadows Resort</h3>
+        </span>
+    </a>
+
+    <a href="https://www.lamarvella.com/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://assets.simplotel.com/simplotel/image/upload/w_5000,h_3333/x_278,y_0,w_4444,h_3333,r_0,c_crop,q_80,fl_progressive/w_900,f_auto,c_fit/la-marvella-bengaluru/Executive_Suite_1_aqbmhw" alt="La Marvella" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">La Marvella</h3>
+        </span>
+    </a>
+
+    <a href="https://ankitvista.com/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/11/95/94/84/tapasya-pool-area.jpg" alt="Ankit Vista" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">Ankit Vista</h3>
+        </span>
+    </a>
+
+    <a href="https://www.theleela.com/the-leela-bhartiya-city-bengaluru" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://www.theleela.com/prod/content/styles/tl_420_399_webp/s3/2025-09/420X400.jpg" alt="Leela Bhartiya" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">Leela Bhartiya</h3>
+        </span>
+    </a>
+
+    <a href="https://www.marriott.com/en-us/hotels/blrwb-trinity-whitefield-bengaluru/overview" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://media.easemytrip.com/media/Hotel/SHL-20072050169687/RoomImage/RoomImage7Epp7K.jpg" alt="Trinity Whitefield" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">Trinity Whitefield</h3>
+        </span>
+    </a>
+
+    <a href="https://www.hyatt.com/hyatt-centric/blrhy-hyatt-centric-mg-road-bangalore" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://etimg.etb2bimg.com/photo/95222861.cms" alt="Hyatt Centric" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">Hyatt Centric</h3>
+        </span>
+    </a>
+
+    <a href="https://in.hotels.com/ho2802644256/tulip-villa-by-orbit-hotels-bengaluru-india/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/c6/22/20/tulip-villa.jpg?w=500&h=-1&s=1" alt="Tulip Villa" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">Tulip Villa</h3>
+        </span>
+    </a>
+
+    <a href="https://www.marriott.com/en-us/hotels/blrgs-sheraton-grand-bangalore-hotel-at-brigade-gateway/overview/" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://cache.marriott.com/content/dam/marriott-renditions/BLRGS/blrgs-presidential-suite-7956-hor-clsc.jpg" alt="Sheraton Grand" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">Sheraton Grand</h3>
+        </span>
+    </a>
+
+    <a href="https://www.tajhotels.com/en-in/hotels/taj-yeshwantpur-bangalore" target="_blank" style="text-decoration:none;">
+        <span class="image-container" style="position: relative; display: inline-block;">
+            <img src="https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201106201105517909-215452-72c5063a8ce711e9a98d0242ac110003.jpg" alt="Taj Yeshwantpur" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">Taj Yeshwantpur</h3>
+        </span>
+    </a>
+
+</div>
+
+
+    <h6 id="restaraunts" style="color: brown; opacity: 50%; font-size: 50px; text-align: center; line-height: 0px; font-family:Arial, Helvetica, sans-serif;">Explore</h6>
+<h1 style="font-size: 150px; text-align: center; line-height: 0px; font-family:Arial, Helvetica, sans-serif; color:aqua; font-weight: bold; opacity:45% ; -webkit-text-stroke: 5px brown;">RESTAURANTS</h1>
+
+<div class="restaurant-section" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 20px;">
+
+    <a href="https://www.marriott.com/en-us/dining/restaurant-bar/blrjw-jw-marriott-hotel-bengaluru/5281786-spice-terrace.mi" target="_blank" style="text-decoration:none;">
+        <span style="position: relative; display: inline-block;">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/8b/67/3b/spice-terrace-ambience.jpg?w=900&h=500&s=1" alt="Spice Terrace" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 class="overlay" style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:10px; border-radius:0 0 10% 10%;">Spice Terrace</h3>
+        </span>
+    </a>
+
+    <a href="https://www.marriott.com/en-us/dining/restaurant-bar/blrgl-itc-gardenia-a-luxury-collection-hotel-bengaluru/6419615-lotus-pavilion.mi" target="_blank" style="text-decoration:none;">
+        <span style="position: relative; display: inline-block;">
+            <img src="https://b.zmtcdn.com/data/pictures/3/50623/422df58b0e0eecb8d0d62b98db167684.jpg" alt="Lotus Pavilion" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Lotus Pavilion</h3>
+        </span>
+    </a>
+
+    <a href="https://www.theleela.com/the-leela-palace-bengaluru/restaurants/jamavar" target="_blank" style="text-decoration:none;">
+        <span style="position: relative; display: inline-block;">
+            <img src="https://thecurryblogger.wordpress.com/wp-content/uploads/2017/03/jamavar-at-the-leela.jpg" alt="Jamavar" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Jamavar</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/yuki-koramangala-5th-block-bangalore" target="_blank" style="text-decoration:none;">
+        <span style="position: relative; display: inline-block;">
+            <img src="https://b.zmtcdn.com/data/pictures/6/21832936/9768b1fcb24bbec7d4b9da5e33a5742d.jpg" alt="Yuki" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Yuki</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/xero-degrees-indiranagar-bangalore" target="_blank" style="text-decoration:none;">
+        <span style="position: relative; display: inline-block;">
+            <img src="https://b.zmtcdn.com/data/reviews_photos/a00/d2c69294ae0d9b6ee480afe3534c3a00_1708801675.jpg?fit=around|750:500&crop=750:500;*,*" alt="Xero Degrees" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Xero Degrees</h3>
+        </span>
+    </a>
+
+    <a href="https://www.streetstoryss.in/" target="_blank" style="text-decoration:none;">
+        <span style="position: relative; display: inline-block;">
+            <img src="https://im.whatshot.in/img/2020/Feb/pl51-1582885688.jpg" alt="Street Storyss" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Street Storyss</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/barrys-sky-lounge-kalyan-nagar-bangalore" target="_blank" style="text-decoration:none;">
+        <span style="position: relative; display: inline-block;">
+            <img src="https://b.zmtcdn.com/data/pictures/7/20737007/5ba639d97b62b9b1cab0dec0a5214d6a.jpg?fit=around|750:500&crop=750:500;*,*" alt="Barry’s Sky Lounge" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Barry’s Sky Lounge</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/refuell-restobar-nagawara-bangalore" target="_blank" style="text-decoration:none;">
+        <span style="position: relative; display: inline-block;">
+            <img src="https://b.zmtcdn.com/data/pictures/4/21440124/d547f70f811b7ebc8035dc54ef8afe47.jpg" alt="Refuell Restobar" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Refuell Restobar</h3>
+        </span>
+    </a>
+
+    <a href="https://one8commune.co.in/" target="_blank" style="text-decoration:none;">
+        <span style="position: relative; display: inline-block;">
+            <img src="https://one8commune.co.in/wp-content/uploads/2024/03/LAH-3-1024x683.webp" alt="One8 Commune" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">One8 Commune</h3>
+        </span>
+    </a>
+
+    <a href="https://hodclub.in/" target="_blank" style="text-decoration:none;">
+        <span style="position: relative; display: inline-block;">
+            <img src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/DINEOUT_ALL_RESTAURANTS/IMAGES/RESTAURANT_IMAGE_SERVICE/2024/12/6/0d7c8a07-fa57-48f8-898b-68450eee0616_image21830a241478014c3d8355f34246079ddc.JPG" alt="HOD Club" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">HOD Club</h3>
+        </span>
+    </a>
+
+    <a href="https://www.zomato.com/bangalore/proxy-mahadevapura-bangalore" target="_blank" style="text-decoration:none;">
+        <span style="position: relative; display: inline-block;">
+            <img src="https://images.venuebookingz.com/31443-1746516545-wm-don_proxy_06058_78.jpg" alt="Proxy" style="height:400px; width:300px; border-radius:10%; border:8px solid darkgoldenrod; object-fit:cover;">
+            <h3 style="position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.6); color:white; text-align:center; margin:0; padding:8px; border-radius:0 0 10% 10%;">Proxy</h3>
+        </span>
+    </a>
+
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="footer_">
+        <div id="footer">
+            <section id="about" class="about">
+                <h2>About Travel Guide to Bangalore</h2>
+                <p>Travel Guide to Bangalore helps explorers discover the city's beauty, culture, and charm — all in one place! From iconic landmarks to hidden gems — your journey through Bangalore starts here!</p>
+            </section>
+        </div>
+        <div id="footer2">
+            <section id="contact" class="contact">
+                <h2 style="text-align: center;">Contact Us 📞</h2>
+                <form class="form1">
+                    <input type="text" placeholder="Enter your name" required/>
+                    <br>
+                    <input type="email" placeholder="Enter your email" required/>
+                    <br>
+                    <textarea placeholder="Your message" required></textarea>
+                    <br>
+                    <button id="button1" type="submit">Send</button>
+                </form>
+            </section>
+        </div>
+        </div>
+        <div>
+            <footer>
+                <p>©️ 2025 Travel Guide to Bangalore | Made with ❤️ by Muskaan</p>
+            </footer>
+        </div>
+</body>
+</html>
